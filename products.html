@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Nook</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css">
+    </head>
+    
+    <body>
+        <nav>
+            <form action="/search" method="GET">
+                <div class="search-container">
+                    <input type="text" name="query" placeholder="Search..." required>
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button type="button" id="speech-recognition">
+                        <i class="fa fa-microphone"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="hamburger">
+                <i class="fa fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="about us.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div id="side">
+            <div class="top-icons">
+                <i class="fa fa-user"></i>
+                <i class="fa fa-shopping-cart"></i> 
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="bottom-icons">
+                <i class="fa-solid fa-location-dot" id="location-icon" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-envelope" id="email-icon" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-phone" id="phone-icon" style="cursor: pointer;"></i>
+            </div>
+        </div>
+        <div id="main">
+
+            <div class="productview">
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tnc.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/gude.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tsh.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/iewu.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tiloal.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tsoa.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/almond.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/cnp.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/babel.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/cnp.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/yfhwiah.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/youngpoet.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+        <footer>
+            <div>
+                <h3>Browse our Products</h3>
+                <a href="products.html" class="greenbtn contactbtn">Shop now</a>
+            </div>
+            <div>
+                <h3>Got any questions</h3>
+                <a href="faq.html" class="greenbtn contactbtn">Ask us</a>
+            </div>
+            <div>
+                <h3>Get to know the team</h3>
+                <a href="about us.html" class="greenbtn contactbtn">About us</a>
+            </div>
+            <div id="contacts">
+                <h3>Get in touch with us</h3>
+                <p>Dummy Location, Philippines 4208</p>
+                <p><a href="mailto:gummy@gmail.com">dummy@gmail.com</a></p>
+                <p id="contact-number" style="display: inline;">+63 XXX XXX XXXX</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+    
+</html>
