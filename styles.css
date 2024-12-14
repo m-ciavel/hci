@@ -528,10 +528,6 @@ img {vertical-align: middle;}
     100% { opacity: 0; }
 }
 
-.row-reverse {
-    flex-direction: row-reverse; /* Change direction to row-reverse */
-}
-
 #carouseldotcontainer {
     display: flex;
     justify-content: center;
@@ -974,7 +970,7 @@ footer a {
 
     .top-icons, .bottom-icons {
         display: flex; 
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-around; 
         width: 100%; 
         margin: 0
