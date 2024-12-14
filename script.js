@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById('email-icon').addEventListener('click', function() {
     // Open the default email client with a pre-defined email address
-    const email = "dummy@gmail.com"; // Replace with your email address
+    const email = "support@booknook.com"; // Replace with your email address
     const subject = "Subject Here"; // Optional subject
     const body = "Body of the email here."; // Optional body
     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlides(slideIndex);
 
     // Function to go to the next or previous slide
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
+    window.plusSlides = function(n) {
+        showSlides(slideIndex += n); // Adjust slide index
+    };
 
     // Function to set the current slide
     window.setCurrentSlide = function(n) { // Make it globally accessible
@@ -192,55 +192,78 @@ document.addEventListener("DOMContentLoaded", function() {
       // Initialize the gallery by showing the first set of cards
       showCards(currentIndex);
 
-        // Get modal elements
-    const modal = document.getElementById('cardDialog');
-    const modalImage = document.getElementById('modalImage');
-    const modalText = document.getElementById('modalText');
-    const closeModal = document.querySelector('.close');
-
-    // Get toast notification
-    const toast = document.getElementById('toast');
-
-    // Open modal when card is clicked
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-            const imgSrc = card.querySelector('img').src;
-            const price = card.querySelector('p').textContent;
-            modalImage.src = imgSrc;
-            modalText.textContent = `Price: ${price}`;
-            modal.style.display = 'block';
-        });
-    });
-
-    // Close modal when clicking on the close button or outside modal
-    closeModal.addEventListener('click', () => modal.style.display = 'none');
-    window.addEventListener('click', event => {
-        if (event.target === modal) modal.style.display = 'none';
-    });
-
-    // Show toast notification
-    function showToast(message) {
-        toast.textContent = message;
-        toast.className = 'toast show';
-        setTimeout(() => {
-            toast.className = 'toast';
-        }, 3000);
-    }
-
-    // Heart and Cart Icon Click Handlers
-    document.querySelectorAll('.fa-heart').forEach(icon => {
-        icon.addEventListener('click', (event) => {
-            event.stopPropagation();
-            showToast('Added to Wishlist');
-        });
-    });
-
-    document.querySelectorAll('.fa-shopping-cart').forEach(icon => {
-        icon.addEventListener('click', (event) => {
-            event.stopPropagation();
-            showToast('Added to Cart');
-        });
-    });
-
+      const toast = document.getElementById('toast');
+      const modal = document.getElementById('cardDialog');
+      const modalImage = document.getElementById('modalImage');
+      const modalText = document.getElementById('modalText');
+      const closeModal = document.querySelector('.close');
+  
+      // Show toast notification function (only one instance)
+      function showToast(message) {
+          toast.textContent = message;
+          toast.className = 'toast show';
+          setTimeout(() => {
+              toast.className = 'toast'; // Hide after 3 seconds
+          }, 3000);
+      }
+  
+      // Open modal when card is clicked
+      document.querySelectorAll('.card').forEach(card => {
+          card.addEventListener('click', () => {
+              const imgSrc = card.querySelector('img').src;
+              const price = card.querySelector('p').textContent;
+              modalImage.src = imgSrc;  // Set the image source
+              modalText.textContent = `Price: ${price}`; // Set the price text
+              modal.style.display = 'flex';  // Show modal
+          });
+      });
+  
+      if (closeModal) {
+          closeModal.addEventListener('click', () => modal.style.display = 'none');
+      }
+  
+      window.addEventListener('click', event => {
+          if (event.target === modal) modal.style.display = 'none';
+      });
+  
+      // Heart and Cart Icon Click Handlers
+      document.querySelectorAll('.wish').forEach(icon => {
+          icon.addEventListener('click', (event) => {
+              event.stopPropagation();
+              showToast('Added to Wishlist <3');
+          });
+      });
+  
+      document.querySelectorAll('.fa-shopping-cart').forEach(icon => {
+          icon.addEventListener('click', (event) => {
+              event.stopPropagation();
+              showToast('Added to Cart :)');
+          });
+      });
+  
+      // Handle trash icon click for wishlist item removal (ONLY TOAST, NO MODAL)
+      document.querySelectorAll('.fa-trash').forEach((trashIcon) => {
+          trashIcon.addEventListener('click', function(event) {
+              event.stopPropagation(); // Prevent modal from being triggered by clicking trash icon
+  
+              // Optionally, remove the entire card from the DOM
+              const card = event.target.closest('.card');
+              if (card) {
+                  card.remove(); // Remove the card from the DOM
+              }
+  
+              // Show the toast notification for item removal
+              showToast("Item removed from wishlist.");
+          });
+      });
+  
+      // FAQ questions toggle
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(function(question) {
+          question.addEventListener('click', function() {
+              const faqItem = question.closest('.faq-item');
+              faqItem.classList.toggle('active');
+          });
+      });
   });
 
