@@ -340,6 +340,7 @@ img {vertical-align: middle;}
     transition: background-color 0.3s ease, color 0.3s ease;
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .categorybtn:hover {
@@ -571,6 +572,52 @@ img {vertical-align: middle;}
     width: 100%; /* Full width */
     padding: 20px 0; /* Padding for top and bottom */
     box-sizing: border-box; /* Include padding in width */
+}
+
+/* General Product Page Header Styles */
+.product-page-header {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-page-header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.product-page-header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Filter Section Styles */
+.product-page-filter {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-page-filter h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.product-page-categories ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+    justify-content: center; /* Center items */
+}
+
+.product-page-categories li {
+    margin: 10px;
+    min-width: 120px; /* Set a minimum width for buttons */
 }
 
 /* FAQ Section Styles */
@@ -846,7 +893,7 @@ img {vertical-align: middle;}
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #4CAF50; /* Green */
+    background-color: #5e6b58; /* Green */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -898,7 +945,7 @@ img {vertical-align: middle;}
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #4CAF50; /* Green */
+    background-color: #5e6b58; /* Green */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -1082,6 +1129,17 @@ footer a {
 
     .categorybtn {
         margin-bottom: 10px; /* Space between buttons */
+    }
+
+    .product-page-categories ul {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: stretch; /* Center items */
+    }
+
+    .product-page-categories li {
+        width: 100%; /* Make buttons full width */
+        margin: 10px 0;
+        text-align: center; /* Center text */
     }
 
     .card {
