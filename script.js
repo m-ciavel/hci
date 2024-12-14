@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const toast = document.getElementById('toast');
       const modal = document.getElementById('cardDialog');
+      const modalTitle = document.getElementById('modalTitle');
       const modalImage = document.getElementById('modalImage');
       const modalText = document.getElementById('modalText');
       const closeModal = document.querySelector('.close');
@@ -212,7 +213,9 @@ document.addEventListener("DOMContentLoaded", function() {
           card.addEventListener('click', () => {
               const imgSrc = card.querySelector('img').src;
               const price = card.querySelector('p').textContent;
+              const bookTitle = card.querySelector('img').alt;
               modalImage.src = imgSrc;  // Set the image source
+              modalTitle.textContent = bookTitle;
               modalText.textContent = `Price: ${price}`; // Set the price text
               modal.style.display = 'flex';  // Show modal
           });

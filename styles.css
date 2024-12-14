@@ -449,11 +449,18 @@ img {vertical-align: middle;}
 
 #modalImage {
     max-width: 100%; /* Ensure image doesn't overflow */
-    max-height: 600px; /* Limit image height */
+    max-height: 500px; /* Limit image height */
     object-fit: contain; /* Maintain image aspect ratio */
     width: auto;
     height: auto;
     margin-bottom: 20px;
+}
+
+#modalTitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 /* Text below the image */
