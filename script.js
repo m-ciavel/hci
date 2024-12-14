@@ -191,4 +191,56 @@ document.addEventListener("DOMContentLoaded", function() {
   
       // Initialize the gallery by showing the first set of cards
       showCards(currentIndex);
+
+        // Get modal elements
+    const modal = document.getElementById('cardDialog');
+    const modalImage = document.getElementById('modalImage');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.querySelector('.close');
+
+    // Get toast notification
+    const toast = document.getElementById('toast');
+
+    // Open modal when card is clicked
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            const imgSrc = card.querySelector('img').src;
+            const price = card.querySelector('p').textContent;
+            modalImage.src = imgSrc;
+            modalText.textContent = `Price: ${price}`;
+            modal.style.display = 'block';
+        });
+    });
+
+    // Close modal when clicking on the close button or outside modal
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', event => {
+        if (event.target === modal) modal.style.display = 'none';
+    });
+
+    // Show toast notification
+    function showToast(message) {
+        toast.textContent = message;
+        toast.className = 'toast show';
+        setTimeout(() => {
+            toast.className = 'toast';
+        }, 3000);
+    }
+
+    // Heart and Cart Icon Click Handlers
+    document.querySelectorAll('.fa-heart').forEach(icon => {
+        icon.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showToast('Added to Wishlist');
+        });
+    });
+
+    document.querySelectorAll('.fa-shopping-cart').forEach(icon => {
+        icon.addEventListener('click', (event) => {
+            event.stopPropagation();
+            showToast('Added to Cart');
+        });
+    });
+
   });
+

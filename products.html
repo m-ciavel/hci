@@ -6,6 +6,52 @@
         <title>Book Nook</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css">
+        <style>
+            /* General Product Page Header Styles */
+            .product-page-header {
+                background-color: #f9f9f9;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .product-page-header h1 {
+                font-size: 2rem;
+                color: #333;
+            }
+
+            .product-page-header p {
+                font-size: 1rem;
+                color: #666;
+            }
+
+            /* Filter Section Styles */
+            .product-page-filter {
+                background-color: #fff;
+                padding: 20px;
+                margin-top: 30px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .product-page-filter h3 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .product-page-categories ul {
+                display: flex;
+                gap: 10px;
+                padding: 0;
+                list-style: none;
+                justify-content: center;
+            }
+
+            .categorybtn{
+                text-decoration: none;
+            }
+
+        </style>
     </head>
     
     <body>
@@ -44,8 +90,25 @@
             </div>
         </div>
         <div id="main">
+            <div id="product-header" class="product-page-header">
+                <h1>Explore Our Collection</h1>
+                <p>Find your perfect read from our curated selection of books. Browse our categories below!</p>
+            </div>
+            
+            <div id="filter-section" class="product-page-filter">
+                <h3>Filter by Categories</h3>
+                <div id="categories" class="product-page-categories">
+                    <ul>
+                        <li><a href="#" class="categorybtn filterbtn active">All</a></li>
+                        <li><a href="#" class="categorybtn filterbtn ">New Arrivals</a></li>
+                        <li><a href="#" class="categorybtn filterbtn ">Bestsellers</a></li>
+                        <li><a href="#" class="categorybtn filterbtn ">Fiction</a></li>
+                        <li><a href="#" class="categorybtn filterbtn ">Non-Fiction</a></li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="productview">
+            <div id="productview">
                 <div class="card">
                     <a href="#">
                         <img src="assets/tnc.jpg" alt="Avatar" style="width:100%">
@@ -238,7 +301,201 @@
                         </div>
                     </a>
                 </div>
-                
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tnc.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/gude.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tsh.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/iewu.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tiloal.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/tsoa.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/almond.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/cnp.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/babel.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/cnp.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/yfhwiah.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="assets/youngpoet.jpg" alt="Avatar" style="width:100%">
+                        <div class="btncontainer">
+                            <p>$9.99</p>
+                            <div class="icon-container">
+                                <div class="icon-circle">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div class="icon-circle">
+                                    <i class="fa fa-shopping-cart"></i> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div id="load-more-products">
+                    <button id="load-more" class="categorybtn">Load More</button>
+                </div>
             </div>
             
         </div>
@@ -263,6 +520,112 @@
             </div>
         </footer>
         <script src="script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Initial call to hide the last 12 cards
+                hideLastCards();
+        
+                // Event listener for the "Load More" button
+                const loadMoreButton = document.getElementById('load-more');
+                if (loadMoreButton) {
+                    loadMoreButton.addEventListener('click', function() {
+                        loadMoreProducts(); // Reveal the next set of products when clicked
+                    });
+                } else {
+                    console.error("The 'Load More' button was not found.");
+                }
+        
+                // Initialize category button state toggle
+                changeCategoryButtonState();
+        
+                // Event listeners for category buttons to reset cards on filter
+                const categoryButtons = document.querySelectorAll('.filterbtn');
+                categoryButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        resetCards();
+                    });
+                });
+            });
+        
+            // Function to change the active state of category buttons
+            function changeCategoryButtonState() {
+                const categoryButtons = document.querySelectorAll('.filterbtn');
+                categoryButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all
+                        categoryButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        button.classList.add('active');
+                    });
+                });
+            }
+        
+            let loadCount = 1; // Start at 1 to load the first set of 12 cards
+        
+            function loadMoreProducts() {
+                const productView = document.getElementById('productview');
+                
+                // Get all the cards
+                const allCards = Array.from(productView.getElementsByClassName('card'));
+        
+                // Calculate the next set of cards to show
+                const startIndex = loadCount * 12; // Start from the (loadCount * 12)th card
+                const endIndex = startIndex + 12;  // Load the next 12 cards
+        
+                // Get the cards that are currently hidden and should be displayed
+                const cardsToLoad = allCards.slice(startIndex, endIndex);
+        
+                if (cardsToLoad.length > 0) {
+                    // Reveal the next 12 cards
+                    cardsToLoad.forEach(function(card) {
+                        card.style.display = 'block'; // Show the card
+                    });
+        
+                    // Increment loadCount to load the next set of cards on the next "Load More"
+                    loadCount++;
+                }
+        
+                // If all cards are visible, hide the "Load More" button
+                if (loadCount * 12 >= allCards.length) {
+                    document.getElementById('load-more').style.display = 'none';
+                }
+            }
+        
+            // Function to initially hide the last 12 cards
+            function hideLastCards() {
+                const productView = document.getElementById('productview');
+                const allCards = Array.from(productView.getElementsByClassName('card'));
+                
+                // Hide all cards after the first 12
+                for (let i = 12; i < allCards.length; i++) {
+                    allCards[i].style.display = 'none';
+                }
+            }
+        
+            // Function to reset cards to the first 12 and show the "Load More" button again
+            function resetCards() {
+                const productView = document.getElementById('productview');
+                const allCards = Array.from(productView.getElementsByClassName('card'));
+        
+                // Hide all cards after the first 12
+                for (let i = 12; i < allCards.length; i++) {
+                    allCards[i].style.display = 'none';
+                }
+        
+                // Show only the first 12 cards again
+                for (let i = 0; i < 12; i++) {
+                    allCards[i].style.display = 'block';
+                }
+        
+                // Reset the loadCount to 1, so the next set of 12 cards is loaded correctly
+                loadCount = 1;
+        
+                // Show the "Load More" button again
+                document.getElementById('load-more').style.display = 'block';
+            }
+        </script>
+        
+        
     </body>
     
 </html>
