@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function() {
           });
       });
   
-      document.querySelectorAll('.fa-shopping-cart').forEach(icon => {
+      document.querySelectorAll('.addcart').forEach(icon => {
           icon.addEventListener('click', (event) => {
               event.stopPropagation();
               showToast('Added to Cart :)');
@@ -265,5 +265,133 @@ document.addEventListener("DOMContentLoaded", function() {
               faqItem.classList.toggle('active');
           });
       });
+
+
+      const cartItemsContainer = document.getElementById('cart-items');
+      if (cartItemsContainer) {
+          // Proceed with cart functionality
+          cartItemsContainer.addEventListener('click', function(event) {
+              if (event.target.classList.contains('remove-item')) {
+                  const itemId = parseInt(event.target.getAttribute('data-id'));
+                  removeItem(itemId);
+              }
+          });
+  
+          const totalPriceElement = document.getElementById('total-price');
+          const checkoutButton = document.getElementById('checkout-button');
+      
+          // Mock cart data (could be retrieved from localStorage, API, etc.)
+          const cart = [
+              { id: 1, name: "The Invisible Life of Addie Larue", price: 9.99, quantity: 2, image: "assets/tiloal.jpg" },
+              { id: 2, name: "The Song of Achilles", price: 9.99, quantity: 1, image: "assets/tsoa.jpg" },
+              { id: 3, name: "Babel", price: 9.99, quantity: 3, image: "assets/babel.jpg" }
+          ];
+      
+          // Function to update the cart UI
+          function updateCart() {
+              cartItemsContainer.innerHTML = '';
+              let totalPrice = 0;
+      
+              cart.forEach(item => {
+                  // Create cart item element
+                  const itemElement = document.createElement('div');
+                  itemElement.classList.add('cart-item');
+      
+                  itemElement.innerHTML = `
+                      <img src="${item.image}" alt="${item.name}">
+                      <div class="cart-item-details">
+                          <p><strong>${item.name}</strong></p>
+                          <p>Price: $${item.price.toFixed(2)}</p>
+                          <p>Quantity: <input type="number" value="${item.quantity}" min="1" data-id="${item.id}" class="quantity-input"></p>
+                      </div>
+                      <button class="remove-item" data-id="${item.id}">Remove</button>
+                  `;
+      
+                  cartItemsContainer.appendChild(itemElement);
+      
+                  // Update total price
+                  totalPrice += item.price * item.quantity;
+              });
+      
+              totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+          }
+      
+          // Function to handle removal of cart item
+          function removeItem(id) {
+              const index = cart.findIndex(item => item.id === id);
+              if (index !== -1) {
+                  cart.splice(index, 1);
+                  updateCart();
+              }
+          }
+      
+          // Function to update quantity of cart item
+          function updateQuantity(id, quantity) {
+              const item = cart.find(item => item.id === id);
+              if (item) {
+                  item.quantity = quantity;
+                  updateCart();
+              }
+          }
+      
+          // Event listener for removing items
+          cartItemsContainer.addEventListener('click', function(event) {
+              if (event.target.classList.contains('remove-item')) {
+                  const itemId = parseInt(event.target.getAttribute('data-id'));
+                  removeItem(itemId);
+              }
+          });
+      
+          // Event listener for quantity change
+          cartItemsContainer.addEventListener('input', function(event) {
+              if (event.target.classList.contains('quantity-input')) {
+                  const itemId = parseInt(event.target.getAttribute('data-id'));
+                  const quantity = parseInt(event.target.value);
+                  updateQuantity(itemId, quantity);
+              }
+          });
+      
+          // Handle checkout button click (for now, just a simple alert)
+          checkoutButton.addEventListener('click', function() {
+              alert('Proceeding to Checkout. Thank you for your purchase. Happy Reading!');
+          });
+      
+          // Initialize the cart
+          updateCart();
+      }
+
+      // Check if we're on the profile page
+    if (window.location.pathname.includes('profile.html')) {
+        // Only run profile-related script on the profile page
+
+        // Handle the 'Edit Profile' button click
+        document.getElementById('editProfileBtn').addEventListener('click', function() {
+            // Hide the profile and show the edit form
+            document.querySelector('.profile-container').style.display = 'none';
+            document.getElementById('editProfileForm').style.display = 'block';
+        });
+
+        // Handle the profile form submission (optional - just an example)
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get the updated profile data
+            const updatedName = document.getElementById('name').value;
+            const updatedEmail = document.getElementById('email').value;
+            const updatedLocation = document.getElementById('location').value;
+
+            // Update the profile section with the new details
+            document.querySelector('.profile-details h2').textContent = updatedName;
+            document.querySelector('.profile-details .user-email').textContent = updatedEmail;
+            document.querySelector('.profile-details .user-location').textContent = updatedLocation;
+
+            // Hide the edit form and show the profile again
+            document.querySelector('.profile-container').style.display = 'block';
+            document.getElementById('editProfileForm').style.display = 'none';
+        });
+    }
+
+     
+
   });
 
